@@ -56,7 +56,7 @@ export default function App() {
           >
             <Picker.Item label="Real Brasileiro" value="BRL" />
             <Picker.Item label="Dolar Americano" value="USD" />
-            <Picker.Item label="Ouro" value="XAU" />
+            <Picker.Item label="Euro" value="EUR" />
             <Picker.Item label="Bitcoin" value="BTC" />
           </Picker>
         </View>
@@ -73,7 +73,7 @@ export default function App() {
           >
             <Picker.Item label="Real Brasileiro" value="BRL" />
             <Picker.Item label="Dolar Americano" value="USD" />
-            <Picker.Item label="Ouro" value="XAU" />
+            <Picker.Item label="Euro" value="EUR" />
             <Picker.Item label="Bitcoin" value="BTC" />
           </Picker>
         </View>
@@ -82,7 +82,7 @@ export default function App() {
       <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
         <Text style={styles.texto}>Valor a converter:  </Text>
       <View style={styles.viewInput}>
-        <TextInput value={valorOriginal} onChangeText={setValorOriginal} style={styles.texto} keyboardType='numeric'/>
+        <TextInput value={valorOriginal} onChangeText={setValorOriginal} style={styles.texto} keyboardType='numeric' returnKeyType={'done'}/>
       </View>
       </View>
       <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center'}}>
