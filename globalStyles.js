@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 export default styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#2F4858",
+    backgroundColor: "#fff0f5",
     justifyContent: 'center',
     alignItems: 'center',
   },
@@ -24,10 +24,11 @@ export default styles = StyleSheet.create({
     textAlign: 'center',
     alignSelf: 'center',
     fontSize: 35,
-    color: '#fff',
+    color: '#f17ea1',
   },
   texto: {
     color: '#fff',
+    fontSize: 20,
   },
   imagem: {
     width: '25%',
@@ -48,9 +49,9 @@ export default styles = StyleSheet.create({
     borderRadius: 9,
   },
   botao:{
-    backgroundColor:'#33658A',
-    width: 125,
-    borderRadius: 20,
+    backgroundColor:'#f17ea1',
+    width: 200,
+    borderRadius: 15,
     marginTop: 20,
     height: 30,
     justifyContent: 'center',
@@ -62,7 +63,7 @@ export default styles = StyleSheet.create({
     color:"#fff",
   },
   bordaEscolha:{
-    borderColor:"#fff",
+    borderColor:"#f17ea1",
     borderStyle:"solid",
     borderRadius:9,
   }

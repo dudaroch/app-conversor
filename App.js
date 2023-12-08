@@ -6,16 +6,19 @@ import {
   Text,
   TextInput,
   View,
+  Image
 } from 'react-native';
 import {Picker} from '@react-native-picker/picker';
 import styles from './globalStyles';
 import { AntDesign } from '@expo/vector-icons';
 
+
+
 export default function App() {
   const [moedaOrigem, setMoedaOrigem] = useState('BRL')
   const [moedaDestino, setMoedaDestino] = useState('USD')
   const [valorConvertido,setValorConvertido] = useState('')
-  const [valorOriginal, setValorOriginal] = useState('99.99999')
+  const [valorOriginal, setValorOriginal] = useState('30')
 
   const buscarHandle = async () =>{
     let URL = `https://economia.awesomeapi.com.br/last/${moedaOrigem}-${moedaDestino}`
@@ -37,7 +40,7 @@ export default function App() {
   }
   const limparResultado = () =>{
     setValorConvertido('')
-    setValorOriginal('33.3333')
+    setValorOriginal('')
     setMoedaOrigem('BRL')
     setMoedaDestino('USD')
   }
@@ -57,7 +60,7 @@ export default function App() {
             <Picker.Item label="Real Brasileiro" value="BRL" />
             <Picker.Item label="Dolar Americano" value="USD" />
             <Picker.Item label="Euro" value="EUR" />
-            <Picker.Item label="Bitcoin" value="BTC" />
+            <Picker.Item label="Dólar Canadense" value="CAD" />
           </Picker>
         </View>
       </View>
@@ -74,26 +77,24 @@ export default function App() {
             <Picker.Item label="Real Brasileiro" value="BRL" />
             <Picker.Item label="Dolar Americano" value="USD" />
             <Picker.Item label="Euro" value="EUR" />
-            <Picker.Item label="Bitcoin" value="BTC" />
+            <Picker.Item label="Dólar Canadense" value="CAD" />
           </Picker>
         </View>
       </View>
       </View>
       <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
-        <Text style={styles.texto}>Valor a converter:  </Text>
+        <Text style={styles.texto}>Valor para converter:  </Text>
       <View style={styles.viewInput}>
-        <TextInput value={valorOriginal} onChangeText={setValorOriginal} style={styles.texto} keyboardType='numeric' returnKeyType={'done'}/>
+        <TextInput value={valorOriginal} onChangeText={setValorOriginal} style={styles.texto} keyboardType='numeric' returnKeyType='done'/>
       </View>
       </View>
-      <View style={{flexDirection:'row',justifyContent:'space-around',alignItems:'center'}}>
-      <Pressable style={styles.botao} onPress={buscarHandle}><Text style={{color:"#fff"}}>Buscar valor</Text></Pressable>
+      <View style={{justifyContent:'space-around',alignItems:'center'}}>
+      <Pressable style={styles.botao} onPress={buscarHandle}><Text style={{color:"#fff"}}>Buscar valor</Text></Pressable> 
       <Pressable style={styles.botao} onPress={limparResultado}><Text style={{color:"#fff"}}>Limpar valor</Text></Pressable>
       </View>
-      <Text style={{textAlign:'center', color:"#fff"}}>{`Resultado: ${valorConvertido}`}</Text>
+      <Text style={{textAlign:'center', color:"#fff", marginTop: 30, fontSize: 20, backgroundColor: '#f17ea1', borderRadius: 10,}}>{`Resultado: ${valorConvertido}`}</Text>
       <StatusBar style="auto" />
       </View>
     </View>
   );
 }
-
-
