@@ -12,7 +12,7 @@ import {Picker} from '@react-native-picker/picker';
 import styles from './globalStyles';
 import { AntDesign } from '@expo/vector-icons';
 
-
+import conversor from './assets/conversor.png';
 
 export default function App() {
   const [moedaOrigem, setMoedaOrigem] = useState('BRL')
@@ -40,16 +40,17 @@ export default function App() {
   }
   const limparResultado = () =>{
     setValorConvertido('')
-    setValorOriginal('')
+    setValorOriginal('33.33')
     setMoedaOrigem('BRL')
     setMoedaDestino('USD')
   }
   return (
     <View style={styles.container}>
       <View style={styles.content}>
-        <Text style={styles.title}>Conversor de moedas</Text>
+      <Image source={conversor} style={{width: 300, height: 100, alignItems: 'center', justifyContent: 'center', alignSelf: 'center'}} /> 
         <View style={{flexDirection:'row',justifyContent:'center',alignItems:'center'}}>
       <Text style={styles.texto}>Moeda 1</Text>
+      
       <View style={styles.viewInpu}>
       <View style={styles.bordaEscolha}>
           <Picker
@@ -89,10 +90,10 @@ export default function App() {
       </View>
       </View>
       <View style={{justifyContent:'space-around',alignItems:'center'}}>
-      <Pressable style={styles.botao} onPress={buscarHandle}><Text style={{color:"#fff"}}>Buscar valor</Text></Pressable> 
-      <Pressable style={styles.botao} onPress={limparResultado}><Text style={{color:"#fff"}}>Limpar valor</Text></Pressable>
+      <Pressable style={styles.botao} onPress={buscarHandle}><Text style={{color:"#fff", fontSize: 18,}}>Buscar valor</Text></Pressable> 
+      <Pressable style={styles.botao} onPress={limparResultado}><Text style={{color:"#fff", fontSize: 18,}}>Limpar valor</Text></Pressable>
       </View>
-      <Text style={{textAlign:'center', color:"#fff", marginTop: 30, fontSize: 20, backgroundColor: '#f17ea1', borderRadius: 10,}}>{`Resultado: ${valorConvertido}`}</Text>
+      <Text style={{textAlign:'center', color:"#fff", marginTop: 30, fontSize: 20, backgroundColor: '#C61F52',}}>{`Resultado: ${valorConvertido}`}</Text>
       <StatusBar style="auto" />
       </View>
     </View>

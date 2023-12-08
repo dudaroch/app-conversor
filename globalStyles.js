@@ -1,3 +1,4 @@
+import { Center } from '@gluestack-ui/themed';
 import { StyleSheet } from 'react-native';
 
 export default styles = StyleSheet.create({
@@ -27,7 +28,7 @@ export default styles = StyleSheet.create({
     color: '#f17ea1',
   },
   texto: {
-    color: '#fff',
+    color: '#C61F52',
     fontSize: 20,
   },
   imagem: {
@@ -37,6 +38,10 @@ export default styles = StyleSheet.create({
     alignItens: 'center',
     alignSelf: 'center',
     paddingTop: 50,
+  },
+  imagem2: {
+    width: 1000,
+    height: 3100,
   },
   viewInput: {
     flexDirection: 'column',
@@ -53,7 +58,7 @@ export default styles = StyleSheet.create({
     width: 200,
     borderRadius: 15,
     marginTop: 20,
-    height: 30,
+    height: 40,
     justifyContent: 'center',
     alignItems: 'center',
     textAlign: 'center',
